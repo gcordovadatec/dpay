@@ -1,0 +1,5 @@
+recursive-include dpay/static *
+recursive-include dpay/templates *
+recursive-include dpay/locale *
+include LICENSE
+exclude .gitlab-ci.yml

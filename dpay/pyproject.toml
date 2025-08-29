@@ -1,0 +1,42 @@
+[project]
+name = "dpay"
+dynamic = ["version"]
+description = "test description"
+readme = "README.rst"
+license = {text = "Apache"}
+keywords = ["pretix"]
+authors = [
+    {name = "Datec LTDA", email = "gcordova@datec.com.bo"},
+]
+maintainers = [
+    {name = "Datec LTDA", email = "gcordova@datec.com.bo"},
+]
+
+dependencies = [
+]
+
+[project.entry-points."pretix.plugin"]
+dpay = "dpay:PretixPluginMeta"
+
+[project.entry-points."distutils.commands"]
+build = "pretix_plugin_build.build:CustomBuild"
+
+[build-system]
+requires = [
+    "setuptools",
+    "pretix-plugin-build",
+]
+
+[project.urls]
+homepage = "GitHub repository URL"
+repository = "GitHub repository URL"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "dpay.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["dpay*"]
+namespaces = false
